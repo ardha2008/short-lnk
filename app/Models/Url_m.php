@@ -15,5 +15,10 @@ class Url_m{
 		}else{
 			return false;
 		}
-	} 
+	}
+    
+    function getUrl($id){
+        $result=$this->database->select()->where('id','=',$id)->from('urls')->getAll();
+        return $result[0]->target;
+    } 
 }

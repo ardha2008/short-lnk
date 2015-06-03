@@ -2,7 +2,7 @@ RewriteEngine on
 
 # Sesuaikan nilai parameter
 # di bawah dengan lokasi folder aplikasi
-#RewriteBase /
+RewriteBase /short-lnk/id
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

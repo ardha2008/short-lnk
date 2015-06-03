@@ -5,6 +5,6 @@
  * @copyright 2014
  */
 
-header('Location:a');
+header('Location:id');
 
 ?>

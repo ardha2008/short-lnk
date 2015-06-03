@@ -4,9 +4,12 @@ use Resources, Models;
 
 class Home extends Resources\Controller
 {
-    public function index()
+    public function index($id=null)
     {
-
+        if($id != null){
+            $query=$this->models->url_m->getUrl($id);
+            $this->redirect($query);
+        }
 
         $data['message'] = '';
         
@@ -17,7 +20,9 @@ class Home extends Resources\Controller
         		);
         	$q=$this->models->url_m->random($data);
         	if($q==true){
-        		$data['message'] = 'success';
+        	   $location=$this->uri->getBaseUri().'/'.$data['id'];
+        		$data['message']='success';
+                $data['messages'] = "<a href='$location'><strong>$location</strong></a>";
         	}else{
         		exit();
         	}
